@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <link rel="preconnect" href="https://kit.fontawesome.com/ee4ad0f660.js">
+    <script src="https://kit.fontawesome.com/ee4ad0f660.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Finder</title>
+    <link rel="stylesheet" href="./sass/style.scss">
+</head>
+<body>
+    <!-- Static template -->
+    <main>
+        <header class="header">
+            <h1 class="app-title">devfinder</h1>
+            <!-- TODO light/dark themes gotta google that & icons -->
+            <button class="toggle-theme darkTheme">
+                toggle
+                <i class="far fa-lightbulb" aria-hidden="true"></i>
+            </button>
+        </header>
+        <form class="profileSearch">
+            <fieldset class="profileSearch-group">
+                <i class="fas fa-search searchIcon" aria-hidden="true"></i>
+                <input id="userInput" type="text" class="searchInput" placeholder="Search GitHub username...">
+            </fieldset>
+            <button id="getData" type="submit" class="searchBtn">Search</button>
+        </form>
+        <div class="profile">
+            <div class="profile_identification">
+                <img id="github-userImg" class="profile_img" src="./assets/defaultavatar.png" alt="profile picture">
+                <div class="profile-github_credentials">
+                    <div class="credentialsContainer">
+                        <h1 id="github-userName" class="profile-github_name">The Octocat <span id="joinDate" class="profile-github_joined">Joined 25 Jan 2011</span></h1>
+                        <span id="profileAt" class="profile-github_at">@octocat</span>
+                    </div>
+                    <p id="profileBio" class="profile-github_bio">This profile has no bio</p>
+                </div>
+            </div>
+            <div class="profile-github_stats">
+                <div class="profile-github_currentStats">
+                    <div class="profile-github_numbers">
+                        Repos
+                        <span id="noRepos" class="currentStats-numbers">8</span>
+                    </div>
+                    <div class="profile-github_numbers" >
+                        Followers
+                        <span id="noFollowers" class="currentStats-numbers">3938</span>
+                    </div>
+                    <div class="profile-github_numbers">
+                        Following
+                        <span id="noFollowing" class="currentStats-numbers">9</span>
+                    </div>
+                </div>
+                <div class="profile-github_infoContainer">
+                    <ul class="profile-github_list">
+                        <li class="profile-github_list__item">
+                            <i class="fas fa-map-marker-alt statsIcon" aria-hidden="true"></i>
+                            <span id="userLocation" class="githubInfo">San Francisco</span>
+                        </li>
+                        <li class="profile-github_list__item">
+                            <i class="fab fa-twitter statsIcon" aria-hidden="true"></i>
+                            <span id="userTwitter" class="githubInfo">sfdasde</span>
+                        </li>
+                        <li class="profile-github_list__item">
+                            <i class="fas fa-link statsIcon" aria-hidden="true"></i>
+                            <span id="userBlog" class="githubInfo">https://github.blog</span>
+                        </li>
+                        <li class="profile-github_list__item">
+                            <i class="far fa-building statsIcon" aria-hidden="true"></i>
+                            <span id="userCompany" class="githubInfo">@github</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

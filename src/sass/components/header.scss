@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    .toggle-theme {
+        background: none;
+        border: none;
+        font-size: 1.15rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        .themeIcon {
+            font-size: 1.35rem;
+        }
+    }
+
+    .lightTheme {
+        color: $githubDark !important;
+    }
+
+    .darkTheme {
+        color: $githubLight !important;
+    }
+
+    .schemeTrigger {
+        display: block !important;
+    }
+}

@@ -1,0 +1,54 @@
+@use './abstracts' as *;
+@use './components';
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1rem;
+    min-height: 100vh;
+    background-color: $appBg;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    @media (min-width: 320px) and (max-width: 900px) {
+        overflow: auto;
+        padding: 1em 0;
+    }
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+    padding: .8em 0;
+
+    @media (min-width: 320px) and (max-width: 1200px) {
+        width: 90%;
+        padding: 0;
+    }
+}
+
+.user-link {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.not-available {
+    color: $notAvailable !important;
+    pointer-events: none;
+}
+
+.warning {
+    margin: 1em 0;
+    padding: .5em;
+    text-align: center;
+    background-color: red;
+    border-radius: .15em;
+}

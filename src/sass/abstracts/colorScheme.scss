@@ -1,0 +1,27 @@
+@use './globals' as *;
+
+.body-light {
+    background-color: $lightAppBg !important;
+    color: $githubDark !important;
+}
+
+.github-light {
+    background-color: $githubLight !important;
+}
+
+.color-dark {
+    color: $githubDark !important;
+}
+
+.body-dark {
+    background: $appBg !important;
+    color: $githubLight !important;
+}
+
+.github-dark {
+    background-color: $githubDark !important;
+}
+
+.color-light {
+    color: $githubLight !important;
+}
