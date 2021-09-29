@@ -31,6 +31,8 @@ const FINDER = (function() {
     // API stuff
     const submitBtn = document.getElementById('getData')
     const loader = document.createElement('div')
+    let namedMonth
+    console.log(namedMonth)
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -46,11 +48,7 @@ const FINDER = (function() {
         const endpoint = `https://api.github.com/users/${input}`
 
         // Select HTML elements
-        const userInfo = document.querySelectorAll('.githubInfo')
-        console.log(userInfo)
         const userName = document.getElementById('github-userName')
-        const userJoined = document.getElementById('joinDate')
-        // console.log(userJoined)
         const userHandle = document.getElementById('profileAt')
         const userBio = document.getElementById('profileBio')
         const userRepos = document.getElementById('noRepos')
@@ -60,7 +58,6 @@ const FINDER = (function() {
         const userTwitter = document.getElementById('userTwitter')
         const userBlog = document.getElementById('userBlog')
         const userCompany = document.getElementById('userCompany')
-        // console.log(userCompany)
 
         // Get JSON
         loading()
@@ -73,38 +70,20 @@ const FINDER = (function() {
         }).then(userData => {
             loaded()
             // Display JSON data
-            userName.textContent = userData.name
-            // userJoined.textContent = userData.created_at
+            convertTime(userData.created_at, userName, userData.name)
             userHandle.innerHTML = `<a class="user-handle" href="${userData.html_url}" target="_blank">@${userData.login}</a>`
             userBio.textContent = userData.bio
             userRepos.textContent = userData.public_repos
             userFollowers.textContent = userData.followers
             userFollowing.textContent = userData.following
-
-            console.log(userData.company)
-
-            const arrData = [userData.location, userData.twitter_username, userData.blog, userData.company]
-            arrData.forEach((element, index) => {
-                if(arrData.indexOf(element) === 0) {
-                    console.log(`this is ${index}`)
-                    userLocation.textContent = element || 'Not Available'
-                } else if(arrData.indexOf(element) === 1) {
-                    console.log(`this is ${index}`)
-                    userTwitter.textContent = element || 'Not Available'
-                } else if(arrData.indexOf(element) === 2) {
-                    console.log(`this is ${index}`)
-                    userBlog.textContent = element || 'Not Available'
-                } else if(arrData.indexOf(element) === 3) {
-                    console.log(`this is ${index}`)
-                    console.log(userCompany)
-                    userCompany.innerText = 'hello'
-                }
-            })
+            userLocation.textContent = userData.location || 'Not Available'
+            userTwitter.innerHTML = checker(userData.twitter_username, userTwitter) || 'Not Available'
+            userBlog.innerHTML = checker(userData.blog, userBlog) || 'Not Available'
+            userCompany.textContent = userData.company || 'Not Available'
         }).catch(error => {
             console.log(error)
         })
-
-        // Clear input :)
+        
         clearInput()
     })
 
@@ -130,6 +109,56 @@ const FINDER = (function() {
         invalidSpan.className = 'warning'
         invalidSpan.innerText = 'You need to type in something valid'
         form.insertAdjacentElement('beforebegin', invalidSpan)
+    }
+
+    // validate what the JSON object returns
+    function checker(element, html) {
+        const elHTML = html
+
+        if(!element) {
+            let newElement = null
+            elHTML.classList.add('not-available')
+            return newElement
+        }
+
+        let linkChk = `<a href="${element}" class="user-link" target="_blank">${element}</a>`
+        return linkChk
+    }
+
+    function convertTime(time, HTMLEl, dataEl) {
+        const newString = time.toString().split('')
+        const halfOfString = Math.floor(newString.length / 2)
+        const firstHalfString = newString.slice(0, halfOfString)
+        const year = firstHalfString.slice(0, 4).join('')
+        const month = firstHalfString.slice(5, 7).join('')
+        const day = firstHalfString.slice(8, 10).join('')
+        
+        // Convert month
+         // Need to display month's name
+         const monthsArray = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ]
+
+        // Turn the previous month string into an integer
+        const intMonth = parseInt(month)
+
+        monthsArray.forEach(monthOfYear => {
+            // If the month matches the index in the array it will display the month's name
+            if(intMonth === monthsArray.indexOf(monthOfYear) + 1) {
+                return HTMLEl.innerHTML = `${dataEl} <span id="joinDate" class="profile-github_joined">Joined ${day} ${monthOfYear} ${year}</span>`
+            }
+        })
     }
 
     // display loading while waiting for the data to be fetched
