@@ -1,6 +1,5 @@
 @use '../abstracts' as *;
 
-// TODO Fix profile picture size and position
 .loadingData {
     display: flex;
     flex-direction: column;
@@ -115,8 +114,9 @@
                     color: $atSpan;
     
                     .user-handle {
-                        color: inherit !important;
+                        color: $atSpan;
                         text-decoration: none !important;
+                        transition: color 125ms ease-in-out;
                     }
                 }
 
