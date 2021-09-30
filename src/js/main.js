@@ -31,8 +31,7 @@ const FINDER = (function() {
     // API stuff
     const submitBtn = document.getElementById('getData')
     const loader = document.createElement('div')
-    let namedMonth
-    console.log(namedMonth)
+    const main = document.querySelector('.main')
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -40,7 +39,6 @@ const FINDER = (function() {
         // Input validation
         const input = document.getElementById('userInput').value
         if(input === '' || input === null) {
-            console.log(input) 
             return invalidInput()
         }
 
@@ -94,12 +92,14 @@ const FINDER = (function() {
 
     // check for HTTP errors
     function httpStatus(http) {
-    const formElement = document.querySelector('.profileSearch')
-    const divWarning = document.createElement('div')
-    const searchWarning = document.createTextNode(`User not found or HTTP Error. Error: ${http.status}`)
-    divWarning.className = 'warning'
-    divWarning.appendChild(searchWarning)
-    formElement.insertAdjacentElement('afterend', divWarning)
+        const formElement = document.querySelector('.profileSearch')
+        const divWarning = document.createElement('div')
+        const searchWarning = document.createTextNode(`User not found or HTTP Error. Error: ${http.status}`)
+        divWarning.className = 'warning'
+        divWarning.appendChild(searchWarning)
+        formElement.insertAdjacentElement('afterend', divWarning)
+
+        goAway(main, divWarning)
     }
 
     // validate input
@@ -109,6 +109,8 @@ const FINDER = (function() {
         invalidSpan.className = 'warning'
         invalidSpan.innerText = 'You need to type in something valid'
         form.insertAdjacentElement('beforebegin', invalidSpan)
+
+        goAway(main, invalidSpan)
     }
 
     // validate what the JSON object returns
@@ -156,9 +158,21 @@ const FINDER = (function() {
         monthsArray.forEach(monthOfYear => {
             // If the month matches the index in the array it will display the month's name
             if(intMonth === monthsArray.indexOf(monthOfYear) + 1) {
+                if(!dataEl) {
+                    const newDataEl = 'Not Available'
+                    return HTMLEl.innerHTML = `${newDataEl} <span id="joinDate" class="profile-github_joined">Joined ${day} ${monthOfYear} ${year}</span>`
+                }
+
                 return HTMLEl.innerHTML = `${dataEl} <span id="joinDate" class="profile-github_joined">Joined ${day} ${monthOfYear} ${year}</span>`
             }
         })
+    }
+
+    // remove warning
+    function goAway(main, child) {
+        setTimeout(() => {
+            main.removeChild(child)
+        }, 5000)
     }
 
     // display loading while waiting for the data to be fetched
