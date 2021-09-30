@@ -1,3 +1,11 @@
+.searchBtn:hover {
+  background-color: #185494 !important;
+}
+
+.user-handle:hover {
+  color: #6da9ff !important;
+}
+
 .body-light {
   background-color: #f5f8ff !important;
   color: #1f2947 !important;
@@ -95,6 +103,7 @@
   letter-spacing: 2px;
   padding: 1em;
   cursor: pointer;
+  transition: background-color 155ms ease-in-out;
 }
 @media (min-width: 320px) and (max-width: 610px) {
   .profileSearch .searchBtn {
@@ -210,8 +219,9 @@
   color: #3074d5;
 }
 .profile_identification .profile-github_credentials .credentialsContainer .profile-github_at .user-handle {
-  color: inherit !important;
+  color: #3074d5;
   text-decoration: none !important;
+  transition: color 125ms ease-in-out;
 }
 .profile_identification .profile-github_credentials .credentialsContainer .profile-github_joined {
   color: #7f87a4;
@@ -294,6 +304,7 @@ html {
 }
 
 body {
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   min-height: 100vh;
   background-color: #141c2e;
