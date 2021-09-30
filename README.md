@@ -16,3 +16,6 @@ GitHub Finder does what the name implies, it looks for a github user's profile a
 </ul>
 <hr />
 <h3>Available at</h3>
+<hr />
+<h4>Issues</h4>
+<p>Can't get user profile pictures to display at all. I'm working on it. For now it will hold GitHub's default profile picture.</p>
