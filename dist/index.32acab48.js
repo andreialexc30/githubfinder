@@ -553,13 +553,18 @@ const FINDER = function() {
     // validate what the JSON object returns
     function checker(element, html) {
         const elHTML = html;
+        const twitter = document.getElementById('userTwitter');
         if (!element) {
             let newElement = null;
             elHTML.classList.add('not-available');
             return newElement;
         }
-        let linkChk = `<a href="${element}" class="user-link" target="_blank">${element}</a>`;
-        return linkChk;
+        elHTML.classList.remove('not-available');
+        return validateLinks(element, twitter);
+    }
+    function validateLinks(element) {
+        if (element.includes('https')) return link = `<a href="${element}" class="user-link" target="_blank">${element}</a>`;
+        else if (!element.includes('https')) return link = `<a href="https://www.${element}" class="user-link" target="_blank">${element}</a>`;
     }
     function convertTime(time, HTMLEl, dataEl) {
         const newString = time.toString().split('');
