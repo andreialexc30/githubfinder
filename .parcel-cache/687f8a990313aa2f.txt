@@ -13,7 +13,7 @@
 51D:\CODE\Projects\githubFinder\node_modules\cssstyle132755074801099863 1
 65D:\CODE\Projects\githubFinder\node_modules\postcss\lib\postcss.js121436361000000000 0
 40D:\CODE\Projects\githubFinder\.gitignore132769725948987613 0
-34D:\CODE\Projects\githubFinder\dist132774699223887827 1
+34D:\CODE\Projects\githubFinder\dist132778213970631494 1
 77D:\CODE\Projects\githubFinder\node_modules\type-fest\ts41\delimiter-case.d.ts121436361000000000 0
 51D:\CODE\Projects\githubFinder\node_modules\mdn-data132755074796795974 1
 53D:\CODE\Projects\githubFinder\node_modules\@parcel\fs132755074786919022 1
@@ -102,7 +102,7 @@
 87D:\CODE\Projects\githubFinder\node_modules\postcss-selector-parser\dist\selectors\id.js121436361000000000 0
 49D:\CODE\Projects\githubFinder\node_modules\@types132755074768837976 1
 85D:\CODE\Projects\githubFinder\node_modules\terser\node_modules\source-map\lib\util.js131709648810000000 0
-44D:\CODE\Projects\githubFinder\src\index.html132774693748700669 0
+44D:\CODE\Projects\githubFinder\src\index.html132774714724419155 0
 62D:\CODE\Projects\githubFinder\node_modules\utils-merge\LICENSE131503396900000000 0
 61D:\CODE\Projects\githubFinder\node_modules\strip-ansi\license121436361000000000 0
 82D:\CODE\Projects\githubFinder\node_modules\uncss\node_modules\source-map\README.md131508293880000000 0
@@ -259,7 +259,7 @@
 74D:\CODE\Projects\githubFinder\node_modules\string.prototype.trimend\.nycrc121436361000000000 0
 80D:\CODE\Projects\githubFinder\node_modules\highlight.js\styles\arduino-light.css121436361000000000 0
 104D:\CODE\Projects\githubFinder\node_modules\postcss-modules-scope\node_modules\postcss\lib\lazy-result.js121436361000000000 0
-44D:\CODE\Projects\githubFinder\src\js\main.js132774699222921856 0
+44D:\CODE\Projects\githubFinder\src\js\main.js132778213969590415 0
 69D:\CODE\Projects\githubFinder\node_modules\@types\node\constants.d.ts132754735020000000 0
 74D:\CODE\Projects\githubFinder\node_modules\which-typed-array\test\index.js121436361000000000 0
 90D:\CODE\Projects\githubFinder\node_modules\wide-align\node_modules\strip-ansi\package.json132755089181852519 0
@@ -1777,7 +1777,7 @@
 59D:\CODE\Projects\githubFinder\node_modules\lodash.camelcase132755074796886015 1
 79D:\CODE\Projects\githubFinder\node_modules\highlight.js\lib\languages\step21.js121436361000000000 0
 93D:\CODE\Projects\githubFinder\node_modules\postcss-modules-values\node_modules\source-map\lib132755074664688379 1
-56D:\CODE\Projects\githubFinder\dist\index.32acab48.js.map132774699223877830 0
+56D:\CODE\Projects\githubFinder\dist\index.32acab48.js.map132778213970621491 0
 75D:\CODE\Projects\githubFinder\node_modules\type-fest\source\promisable.d.ts121436361000000000 0
 53D:\CODE\Projects\githubFinder\node_modules\micromatch132755074789219137 1
 64D:\CODE\Projects\githubFinder\node_modules\util\support\types.js121436361000000000 0
@@ -17286,6 +17286,6 @@
 63D:\CODE\Projects\githubFinder\dist\githubFinder.94e89cdd.js.map132755089218035251 0
 53D:\CODE\Projects\githubFinder\dist\index.02e087d2.css132774691512530580 0
 57D:\CODE\Projects\githubFinder\dist\index.02e087d2.css.map132774691512580580 0
-52D:\CODE\Projects\githubFinder\dist\index.32acab48.js132774699223867822 0
-45D:\CODE\Projects\githubFinder\dist\index.html132774693750963560 0
+52D:\CODE\Projects\githubFinder\dist\index.32acab48.js132778213970591477 0
+45D:\CODE\Projects\githubFinder\dist\index.html132778127838488994 0
 58D:\CODE\Projects\githubFinder\dist\katdancing.83ba4d8f.jpg132756807393934751 0
