@@ -1,6 +1,6 @@
 <h1>About the project</h1>
 GitHub Finder does what the name implies, it looks for a github user's profile and displays the relevant data. This project is inspired from the design of Front End Mentor's own GitHub Finder challenge available on their site.
-![gitfinder](https://user-images.githubusercontent.com/64589516/174032466-27abbbb3-a423-405e-b2b1-efa833d5ef1f.gif)
+![gitfinder](https://user-images.githubusercontent.com/64589516/174032466-27abbbb3-a423-405e-b2b1-efa833d5ef1f.gif =500x373)
 <hr />
 
 <h2>Information</h2>
